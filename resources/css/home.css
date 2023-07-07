@@ -1,0 +1,90 @@
+.home-main-container {
+    display: flex;
+    align-items: center;
+    margin-top: -40px;
+    gap: 70px;
+}
+.showcase-vid-3 {
+    margin-top: -40px;
+    width: 650px;
+    mix-blend-mode: multiply;
+    filter: saturate(1.8);
+}
+.showcase-home {
+    width: 650px;
+    overflow:hidden;
+    display:block;
+    height: 500px;
+}
+.home-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.home-subtitle {
+    color: gray;
+}
+.meetingId, .userName, #username {
+    background-color: var(--main-light);
+    border: 1px solid var(--gray-light);
+    border-radius: 10px;
+    color: gray;
+    font-size: medium;
+    padding: 10px;
+}
+.userName {
+    width: 80%;
+}
+.meetingId {
+    width: 50%;
+}
+
+.join-meeting, #joinMeetingBtn {
+    font-size: medium;
+    background-color: var(--main-medium);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.create-meeting {
+    font-size: medium;
+    background-color: var(--main-dark);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.create-meeting-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+@media screen and (max-width: 1300px) {
+    .showcase-home {
+        display: none;
+    }
+    .home-main-container {
+        margin-top: -30px;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+    }
+    .username-label {
+        display: none;
+    }
+    .logout-btn {
+        color: white;
+    }
+    .home-main-title {
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+}

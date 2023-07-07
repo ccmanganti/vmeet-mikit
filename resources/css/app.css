@@ -1,0 +1,216 @@
+:root {
+    --main-light: #f1f8fc;
+    --main-dark:  #64bcf4;
+    --gray-light: #aba7a7;
+    --gray-dark: #2c2b2b;
+    --gray-darker: #202225;
+    --main-medium: #5865f2;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;  
+}
+body {
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1380px;
+    min-width: 350px;
+    margin: auto;
+    overflow: hidden;
+    
+}
+
+i {
+    font-family: default;
+}
+
+.body {
+    width: 100%;
+    max-width: 1380px;
+    min-width: 375px;
+}
+
+.active-page {
+    display: none;
+}
+
+.reset-pass-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60vh;
+    text-align: center;
+}
+/* HEADER STYLES */
+header {
+    display: block;
+    background: var(--main-light);
+    width: 100%;
+    max-width: 1380px;
+    min-width: 375px;
+    transition: all .3s;
+    z-index: 19;
+}
+.password-reset {
+    font-size: medium;
+    background: var(--main-medium);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 250px;
+    margin-left: 20px;
+}
+header.scrolledUp {
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.164);
+    transform: translateY(0);
+}
+header.scrolledDown {
+    transform: translateY(-100%);
+}
+.nav {
+    z-index: 20;
+    transition: all .3s;
+}
+.navbar {
+    padding: 30px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .3s;
+}
+.navbrand {
+    width: 130px;
+}
+.navlist {
+    display: flex;
+}
+.navitem {
+    list-style-type: none;
+}
+.navlink {
+    position: relative;
+    color: var(--gray-light);
+    text-decoration: none;
+    padding: 15px 30px;
+    font-weight: 400;
+    font-size: medium;
+}
+
+.activeNav {
+    color: white;
+    background-color: var(--main-dark);
+    border-radius: 20px;
+}
+.navlist > .navitem > :not(.activeNav):after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    border-bottom: solid 2px rgb(202, 202, 202);
+    animation: preAnimateBorderOut 0.2s linear forwards;
+}
+.navlist > .navitem :not(.activeNav):hover:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    border-bottom: solid 2px rgb(202, 202, 202);
+    animation: preAnimateBorderIn 0.3s linear forwards;
+}
+.activeNav:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    border-bottom: solid 2px var(--main-dark);
+    animation: animateBorder 0.3s linear forwards;
+}
+.hamburger {
+    display: none;
+}
+.bar {
+    background: var(--main-dark);
+    width: 2rem;
+    height: .25rem;
+    display: flex;
+    flex-direction: column;
+    margin: .37rem 0;
+    transition: .3s;
+}
+
+
+/* NAVIGATION MEDIA QUERIES */
+@media screen and (max-width: 1300px) {
+    
+    .hamburger {
+        display: inline-block;
+    }
+    .hamburger.active .bar{
+        background-color: white;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translateY(13.5px);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-13.5px);
+
+    }
+    .navbar {
+        padding: 5px 20px;
+    }
+    .navlist {
+        position: fixed;
+        width: 75%;
+        top: 0;
+        right: -100%;
+        text-align: center;
+        padding-top: 100px;
+        background-color: var(--main-dark);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        transition: .3s;
+    }
+    .activeNav {
+        background-color: var(--gray-dark);
+    }
+    .navlist.active {
+        right: 0;
+        box-shadow: -50px 0px 100px 10px rgba(0, 0, 0, 0.364);
+    }
+    .navlist > .navitem > :not(.activeNav):after, .navlist > .navitem > .activeNav:after{
+        border: none;
+    }
+    .navitem {
+        padding: 20px 0;
+    }
+    .navlink:hover, .navitem:hover .navlink, .navitem:hover {
+        background-color: white;
+        color: green;
+    }
+    .navlink {
+        color: white;
+    }
+
+}
+
+.hidden {
+    display: none;
+}
